@@ -1,0 +1,26 @@
+{
+  "name": "node-task-queue",
+  "description": "Implementation of a nested asynchronous task queue in Node.js",
+  "author": {
+    "name": "Prateek Bhatt"
+  },
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prateekbhatt/node-task-queue.git"
+  },
+  "bugs": {
+    "url": "https://github.com/prateekbhatt/node-task-queue/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/prateekbhatt/node-task-queue/raw/master/LICENSE"
+    }
+  ],
+  "dependencies": {
+    "kue": "~0.6.2"
+  },
+  "devDependencies": {},
+  "readmeFilename": "README.md"
+}

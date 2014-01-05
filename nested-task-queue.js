@@ -9,11 +9,11 @@ function parentJob (done){
   job
     .on('complete', function (){
       console.log('Job', job.id, 'of type', job.data.type, 'is done');
-      done && done();
+      done();
     })
     .on('failed', function (){
       console.log('Job', job.id, 'of type', job.data.type, 'has failed');
-      done && done();
+      done();
     })
   job.save();
 }
@@ -25,25 +25,23 @@ function childJob (done){
   job
     .on('complete', function (){
       console.log('Job', job.id, 'of type', job.data.type, 'is done');
-      done && done();
+      done();
     })
     .on('failed', function (){
       console.log('Job', job.id, 'of type', job.data.type, 'has failed');
-      done && done();
+      done();
     })
   job.save();
 }
 
 jobs.process('parent', function (job, done){
   /* carry out all the parent job functions here */
-  done && done();
+  childJob(done);
 })
-
 
 jobs.process('child', function (job, done){
   /* carry out all the child job functions here */
-  done && done();
+  done();
 })
 
-setInterval(parentJob, 2000);
-setInterval(childJob, 3000);
+parentJob(function(){ });

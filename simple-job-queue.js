@@ -26,5 +26,5 @@ jobs.process('new job', function (job, done){
 
 
 setInterval(function (){
-  newJob('send Email');
+  newJob('Send_Email');
 }, 3000);
